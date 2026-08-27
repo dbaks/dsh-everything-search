@@ -1,0 +1,6 @@
+# dsh-everything-search bundle patch: inserts the dual-face plugin row into the
+# web profile roster. Applied as a profile bundle layer (the `dsh.bundle.patch`
+# manifest field) over dsh-base. Install with `dsh plugin --profile web add <path>`.
+- insert:
+    - id: dsh-everything-search
+      name: 'dsh-everything-search'
