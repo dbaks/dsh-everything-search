@@ -47,7 +47,7 @@ dsh plugin --profile web add <本插件包路径>
 例如（Windows）：
 
 ```powershell
-dsh plugin --profile web add C:\Users\Administrator\.dsh\plugins-src\dsh-everything-search
+dsh plugin --profile web add <本插件包路径>
 ```
 
 > `link:` 会把插件链接为依赖；`dsh plugin add` 会应用 `cordis.patch.yml` 把插件行插入 web 插件表。
