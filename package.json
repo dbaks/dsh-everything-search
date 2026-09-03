@@ -1,6 +1,6 @@
 {
   "name": "dsh-everything-search",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Everything 文件搜索插件（DeepSeek Harness / DSH）：全盘极速搜索文件与文件夹，多选后一键加入对话上下文，设置可自定义，es.exe 随插件打包。",
   "type": "module",
   "main": "lib/index.js",
