@@ -106,6 +106,24 @@ dsh plugin --profile web rm dsh-everything-search
 **支持中文路径吗？**
 支持。搜索采用 UTF-8 导出再读取，中文文件名/路径不乱码。
 
+**新文件搜不到（Everything 索引陈旧）？**
+这通常说明本机的 **Everything 服务**没安装/没运行 —— 没有服务就缺少 USN 日志监控，新文件不会自动进索引。
+- 本插件已内置**自动检测 + 自愈**：启动时会自动安装服务并重建索引
+- 也可在 **设置 → Everything 搜索** 里查看状态，异常时点「**一键修复**」
+- 手动修复（需管理员）：
+  ```powershell
+  & "C:\Program Files (x86)\Everything\Everything.exe" -install-service
+  & "C:\Program Files (x86)\Everything\Everything.exe" -reindex
+  ```
+
+**升级 DSH 大版本后，插件 UI 不见了？**
+DSH 更新后，第三方插件通常需要**重新注册一次**才会重新加载（Host 还在，但客户端不再挂载）：
+```powershell
+dsh plugin --profile web add <本插件包路径或包名>
+```
+然后**完整重启 DSH** + **重启浏览器**即可恢复。
+> 这是 DSH 版本升级的通用现象，不是插件坏了。若仍不恢复，可先执行 `pnpm install && pnpm build` 再重启。
+
 ---
 
 ## 📄 License
